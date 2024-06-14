@@ -1,53 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce App</title>
-    <link rel="stylesheet" href="styles.css">
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" type="text/css" href="login-signup.css">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <header>
-        <h1>BURGER BABA</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="head-cart">
-            <img src="images/cart.png" alt="">
-            <p id="cart">0</p>
-        </div>
-    </header>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
 
-    <div class="carousel">
-        <div class="slides">
-        </div>
-    </div>
+			<div class="signup">
+				<form>
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input type="text" name="txt" placeholder="User name" required="">
+					<input type="email" name="email" placeholder="Email" required="">
+          <input type="number" name="broj" placeholder="BrojTelefona" required="">
+					<input type="password" name="pswd" placeholder="Password" required="">
+					<button>Sign up</button>
+				</form>
+			</div>
 
-    <section class="products">
-        <div class="pro-heading">
-            <div class="content">
-                <h2>Products</h2>
-                <h2>Products</h2>
-            </div>
-        </div>
-        <div class="product-list">
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 My E-commerce App</p>
-    </footer>
-    <!-- <button onclick="">Add To Cart</button> -->
-
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+			<div class="login">
+				<form>
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="email" name="email" placeholder="Email" required="">
+					<input type="password" name="pswd" placeholder="Password" required="">
+					<button>Login</button>
+				</form>
+			</div>
+	</div>
 </body>
-
 </html>

@@ -44,7 +44,6 @@ const products = [
             "https://i.pinimg.com/564x/b8/a7/5e/b8a75e580a202cce7ac6bc3693e96672.jpg",
         productName: "THE <br /> DOPPLER",
         price: "$10.00",
-        qty: 1,
         id: 0
     },
     {
@@ -52,7 +51,6 @@ const products = [
             "https://t4.ftcdn.net/jpg/05/61/82/83/360_F_561828375_KCtTuNdpQTjHrMqDrcoCpoLaYhLrZQdI.jpg",
         productName: "QUADRA <br /> RELOADED",
         price: "$20.00",
-        qty: 1,
         id: 1
     },
     {
@@ -60,14 +58,12 @@ const products = [
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgzcmUeNiJwtYSeB-syasxZVUBFT9TDy-Yhg&s",
         productName: "ALL AMERICAN <br /> DOUBLE CHEESE",
         price: "$30.00",
-        qty: 1,
         id: 2
     },
     {
         image: "https://t4.ftcdn.net/jpg/05/65/22/05/360_F_565220597_DjMSnmmbovq13MB8b8ET8ydwP0iOKuMX.jpg",
         productName: "Big <br /> Bang",
         price: "$40.00",
-        qty: 1,
         id: 3
     },
 ]
@@ -83,7 +79,7 @@ function listAllProduct() {
             <img src="${product.image}" />
             <h3>${product.productName}</h3>
             <p>${product.price}</p>
-            <button class="product-btn button --door" onclick='addToCart(${JSON.stringify(product).replace(/'/g, "&apos;")}, ${product.id})'>Add To Cart</button>
+            <button class="product-btn button --door" onclick='addToCart(${i})'>Add To Cart</button>
         </div>
         `
         productList.innerHTML += productCard;
@@ -92,42 +88,29 @@ function listAllProduct() {
 
 let cart = []
 
-function addToCart(product, id) {
-    // console.log(id);
-    let priceString = product.price.replace('$', '');
-    product.price = parseFloat(priceString);
-
-    let productInCart = cart.find(item => item.product.id === id);
-
-    if (productInCart) {
-        productInCart.product.qty++;
-        productInCart.total = productInCart.product.price * productInCart.product.qty;
-        Swal.fire({
-            position: "top-center",
-            icon: "success",
-            title: "Quantity updated to cart successfully 😎",
-            showConfirmButton: false,
-            timer: 1500
-          });
-          console.log("Product quantity updated:", cart);
+function addToCart(index) {
+    const { id } = products[index];
+    console.log(products[index]);
+    let isMatchId = false;
+    let targetIndex;
+    cart.forEach((item, index) => {
+        if (item.id === id) {
+            isMatchId = true;
+            targetIndex = index;
+        }
+    });
+    if (!isMatchId) {
+        let productClone = { ...products[index], }
+        productClone.qty = 1;
+        productClone.total = productClone.qty * Number(productClone.price.slice(1));
+        cart.push(productClone)
     } else {
-        cart.push({
-            product,
-            total: product.price * product.qty
-        });
-        Swal.fire({
-            position: "top-center",
-            icon: "success",
-            title: "Product added to cart successfully 😎",
-            showConfirmButton: false,
-            timer: 1500
-          });
-        console.log("Product added to cart:", cart);
+        console.log(targetIndex);
+        let cartItem = cart[targetIndex];
+        cartItem.qty = cartItem.qty + 1;
+        cartItem.totalPrice = cartItem.qty * Number(cartItem.price.slice(1))
     }
-
-    
-    let cartPara = document.querySelectorAll("#cart")[0];
-    cartPara.innerHTML = cart.length;
+    console.log(cart);
 }
 listAllProduct();
 
