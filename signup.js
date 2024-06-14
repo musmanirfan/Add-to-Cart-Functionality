@@ -25,9 +25,10 @@ let login2 = document.querySelectorAll("#login2")[0]
 
 function logIn() {
     let user = JSON.parse(localStorage.getItem("userValues"))
+    if(name === "" || email === "" || phone === "" || password === "") return
     let { email, password } = user;
-    console.log(email, password, login1.value, login2.value);
-    console.log(typeof login1.value, typeof login2.value, typeof email, typeof password);
+    // console.log(email, password, login1.value, login2.value);
+    // console.log(typeof login1.value, typeof login2.value, typeof email, typeof password);
     if (login1.value == email && login2.value == password) {
         localStorage.setItem("login", true);
         window.location.reload()
