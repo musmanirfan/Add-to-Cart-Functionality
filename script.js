@@ -103,15 +103,57 @@ function addToCart(index) {
         let productClone = { ...products[index], }
         productClone.qty = 1;
         productClone.total = productClone.qty * Number(productClone.price.slice(1));
-        cart.push(productClone)
+        cart.push(productClone);
+        Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "Product added to cart successfully 😎",
+            showConfirmButton: false,
+            timer: 1500
+        });
     } else {
         console.log(targetIndex);
         let cartItem = cart[targetIndex];
         cartItem.qty = cartItem.qty + 1;
         cartItem.totalPrice = cartItem.qty * Number(cartItem.price.slice(1))
+        Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "Quantity updated to cart successfully 😎",
+            showConfirmButton: false,
+            timer: 1500
+        });
     }
     console.log(cart);
 }
 listAllProduct();
 
+
+let userName = document.querySelectorAll("#showName")[0]
+function showName() {
+    console.log(
+        "jgfhy"
+    );
+    let loggedIn = localStorage.getItem("login")
+    console.log(typeof loggedIn);
+    if (loggedIn === "true") {
+        let getName = JSON.parse(localStorage.getItem("userValues"))
+        console.log(getName);
+        userName.innerHTML = getName.name
+        return
+    } else if (loggedIn === "false") {
+        console.log("yahan aaya");
+        window.location.replace("index.html");
+        return
+    }
+}
+
+window.addEventListener("load", () => showName());
+
+function logout() {
+    console.log("hellow");
+    let user = localStorage.setItem("login", false)
+
+    window.location.reload();
+}
 

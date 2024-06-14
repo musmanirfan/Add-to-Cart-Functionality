@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Slide Navbar</title>
 	<link rel="stylesheet" type="text/css" href="login-signup.css">
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
+
 <body>
-	<div class="main">  	
+	<div class="main">
 		<input type="checkbox" id="chk" aria-hidden="true">
 
-			<div class="signup">
-				<form>
-					<label for="chk" aria-hidden="true">Sign up</label>
-					<input type="text" name="txt" placeholder="User name" required="">
-					<input type="email" name="email" placeholder="Email" required="">
-          <input type="number" name="broj" placeholder="BrojTelefona" required="">
-					<input type="password" name="pswd" placeholder="Password" required="">
-					<button>Sign up</button>
-				</form>
-			</div>
+		<div class="signup">
+			<form id="signupForm" onsubmit="return false">
+				<label for="chk" aria-hidden="true">Sign up</label>
+				<input class="inp1" type="text" name="username" placeholder="User name" required="">
+				<input class="inp2" type="email" name="email" placeholder="Email" required="">
+				<input class="inp3" type="tel" name="phone" placeholder="BrojTelefona" required="">
+				<input class="inp4" type="password" name="password" placeholder="Password" required="">
+				<button onclick="signup()">Sign up</button>
+			</form>
+		</div>
 
-			<div class="login">
-				<form>
-					<label for="chk" aria-hidden="true">Login</label>
-					<input type="email" name="email" placeholder="Email" required="">
-					<input type="password" name="pswd" placeholder="Password" required="">
-					<button>Login</button>
-				</form>
-			</div>
+		<div class="login">
+			<form onsubmit="return false">
+				<label for="chk" aria-hidden="true">Login</label>
+				<input id="login1" type="email" name="email" placeholder="Email" required="">
+				<input id="login2" type="password" name="pswd" placeholder="Password" required="">
+				<button onclick="logIn()">Login</button>
+			</form>
+		</div>
 	</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="signup.js"></script>
 </body>
+
 </html>
