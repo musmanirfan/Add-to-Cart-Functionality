@@ -104,6 +104,8 @@ function addToCart(index) {
         productClone.qty = 1;
         productClone.total = productClone.qty * Number(productClone.price.slice(1));
         cart.push(productClone);
+        let cartNum = document.querySelectorAll("#cart")[0]
+        cartNum.innerHTML = cart.length;
         Swal.fire({
             position: "top-center",
             icon: "success",
