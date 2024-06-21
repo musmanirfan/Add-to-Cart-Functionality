@@ -45,6 +45,14 @@ nav ul li a {
     text-decoration: none;
 }
 
+#logout{
+    cursor: pointer;
+    border-left: 2px solid white;
+    padding-left: 30px;
+}
+
+
+
 .head-cart img {
     position: relative;
 }

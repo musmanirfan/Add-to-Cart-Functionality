@@ -144,7 +144,7 @@ function showName() {
         userName.innerHTML = getName.name
         return
     } else if (loggedIn === "false") {
-        console.log("yahan aaya");
+        // console.log("yahan aaya");
         window.location.replace("index.html");
         return
     }
@@ -153,7 +153,7 @@ function showName() {
 window.addEventListener("load", () => showName());
 
 function logout() {
-    console.log("hellow");
+    // console.log("hellow");
     let user = localStorage.setItem("login", false)
 
     window.location.reload();

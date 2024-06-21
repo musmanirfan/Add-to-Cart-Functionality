@@ -36,7 +36,7 @@ function logIn() {
         Swal.fire({
             position: "center",
             icon: "error",
-            title: "Email or Password is Incorrect🤦‍♀️",
+            title: "Email or Password is Incorrect 🤦‍♀️",
             showConfirmButton: false,
             timer: 1500
         });
