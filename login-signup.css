@@ -1,3 +1,49 @@
+@media (max-width: 480px) {
+	.main {
+		width: 70% !important; 
+		height: 50vh !important;
+	}
+
+	label{
+		font-size: 3.5em;
+		margin-top: 100px;
+	}
+
+	input {
+		width: 60%;
+		height: 80px;
+		padding: 0 20px;
+		border-radius: 10px;
+	}
+
+	button {
+		width: 65%;
+		height: 80px;
+		margin: 10px auto;
+		justify-content: center;
+		display: block;
+		color: #fff;
+		background: #573b8a;
+		font-size: 2em;
+		font-weight: bold;
+		margin-top: 30px;
+		outline: none;
+		border: none;
+		border-radius: 10px;
+		transition: .2s ease-in;
+		cursor: pointer;
+	}
+
+	.login{
+		transform: translateY(-300px);
+	}
+
+	#chk:checked~.login {
+		transform: translateY(-630px);
+	}
+}
+
+
 body {
 	margin: 0;
 	padding: 0;
@@ -12,7 +58,7 @@ body {
 .main {
 	width: 350px;
 	height: 500px;
-	background: red;
+	/* background: red; */
 	overflow: hidden;
 	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
 	border-radius: 10px;
@@ -101,9 +147,3 @@ button:hover {
 }
 
 
-@media only screen and (max-width: 600px) {
-	.main {
-		width: 50%;
-		height: 33vh;
-	}
-}
