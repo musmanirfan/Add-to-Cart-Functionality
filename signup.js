@@ -7,7 +7,7 @@ let signup = () => {
     let user = { name, email, phone, password }
     localStorage.setItem("userValues", JSON.stringify(user))
     localStorage.setItem("login", true)
-    window.location.replace("Add-to-Cart-Functionality/home.html")
+    window.location.replace("home.html")
 }
 
 function verifyUser() {
