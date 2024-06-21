@@ -142,8 +142,8 @@ button:hover {
 	transform: scale(1);
 }
 
-#chk:checked~.signup label {
+/* #chk:checked~.signup label {
 	transform: scale(.6);
-}
+} */
 
 
