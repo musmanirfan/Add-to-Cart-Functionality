@@ -74,7 +74,6 @@ nav ul li a {
     margin: 0 auto;
     overflow: hidden;
     margin-top: 55px !important;
-
 }
 
 .slides {
@@ -234,3 +233,67 @@ footer {
 }
 
 
+@media only screen and (max-width: 600px) {
+    .head-logo{
+		font-size: 12px !important;
+	}
+
+    header{
+        /* padding: 0; */
+        width: 92% ;
+    } 
+
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    nav{
+        padding: 0px;
+    }
+
+    #showName{
+        font-size: 12px;
+    }
+
+    nav ul li {
+        display: inline;
+        margin: 0 5px !important;
+    }
+
+    #logout{
+        cursor: pointer;
+        border-top: 1px solid white;
+        border-left: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 5px;
+        font-size: 12px;
+    }
+
+
+    .content h2 {
+        font-size: 3em;
+    }
+
+    .pro-heading {
+    min-height: 15vh;
+    }
+
+    .product-item {
+        width: 70%;
+        margin: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .carousel {
+        width: 100%;
+    }
+}
