@@ -35,7 +35,7 @@
 		border: none;
 		border-radius: 10px;
 		transition: .2s ease-in;
-		cursor: pointe;
+		cursor: pointer;
 	}
 
 	.login{
