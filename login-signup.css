@@ -39,7 +39,7 @@
 	}
 
 	.login{
-		transform: translateY(-30px);
+		transform: translateY(-300px);
 	}
 
 	#chk:checked~.login {
